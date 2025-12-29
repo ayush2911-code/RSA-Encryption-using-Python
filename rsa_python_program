@@ -1,7 +1,7 @@
 import random
 import math
 
-# check for prime number
+# checks for prime number
 def is_prime(number):
     if number < 2 :
         return False
@@ -10,7 +10,7 @@ def is_prime(number):
             return False
     return True
 
-# generate a prime number in given range
+# generates a prime number in given range
 def generate_prime(min_value,max_value):
     prime  = random.randint(min_value,max_value)
     while not is_prime(prime):
@@ -18,7 +18,7 @@ def generate_prime(min_value,max_value):
 
     return prime 
 
-# compute modular inverse of e mod phi to find d 
+# computes modular inverse of e mod phi to find d 
 def mod_inverse(e,phi):
     for d in range(3,phi):
         if (d*e) % phi ==1:
@@ -57,5 +57,6 @@ print("Ciphertext:",ciphertext)
 # decodes using ch^d mod n
 message_encoded = [pow(ch,d,n) for ch in ciphertext]
 message = "".join(chr(ch) for ch in message_encoded) # uses generator because it's more memory efficient
+
 
 print(message)
